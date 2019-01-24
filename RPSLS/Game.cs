@@ -45,63 +45,92 @@ namespace RPSLS
 
         }
 
-        public void CheckGestures() //need to add score 
+        public void PlayRound()
+        {
+            playerOne.MakeGesture();
+            playerTwo.MakeGesture();
+        }
+
+        ////public void CheckPlayerScore()
+        ////{
+        ////    while (Player.score < 2)
+        ////    {
+        ////        PlayRound();
+        ////    }
+        ////}
+        public void CheckGestures() //Finish for all gestures. Condense if there is time
         {
             if (playerOne.usedGesture == "rock")
             {
                 Console.WriteLine(playerOne.name + " used " + playerOne.usedGesture);
-                   
-                    if (playerTwo.usedGesture == "paper" || playerTwo.usedGesture == "spock")
+                Console.ReadLine();
+
+                if (playerTwo.usedGesture == "paper" || playerTwo.usedGesture == "spock")
                     {
                         Console.WriteLine(playerTwo.name + " used " + playerTwo.usedGesture);
-                        Console.WriteLine(playerTwo.name + " wins! " + playerTwo.name +" earned 1 point!");
-                        playerTwo.score = +1;
+                    Console.ReadLine();
+                    Console.WriteLine(playerTwo.name + " wins! " + playerTwo.name +" earned 1 point!");
+                    Console.ReadLine();
+                    playerTwo.score = +1;
                     }
                     else if (playerTwo.usedGesture == "scissors" || playerTwo.usedGesture == "lizard")
                     {
                         Console.WriteLine(playerOne.name + " used " + playerTwo.usedGesture);
-                        Console.WriteLine(playerOne.name + " wins! " + playerOne.name + "earned 1 point!");
-                        playerOne.score = +1;
+                    Console.ReadLine();
+                    Console.WriteLine(playerOne.name + " wins! " + playerOne.name + "earned 1 point!");
+                    Console.ReadLine();
+                    playerOne.score = +1;
                     }
             }
             else if (playerOne.usedGesture == "paper")
             {
                 Console.WriteLine(playerOne.name + " used " + playerOne.usedGesture);
-                   
-                    if (playerTwo.usedGesture == "rock" || playerTwo.usedGesture == "spock")
+                Console.ReadLine();
+
+                if (playerTwo.usedGesture == "rock" || playerTwo.usedGesture == "spock")
                     {
                         Console.WriteLine(playerTwo.name + " used " + playerTwo.usedGesture);
-                        Console.WriteLine(playerOne.name + " wins! " + playerOne.name + " earned 1 point!");
-                        playerOne.score = +1;
+                    Console.ReadLine();
+                    Console.WriteLine(playerOne.name + " wins! " + playerOne.name + " earned 1 point!");
+                    Console.ReadLine();
+                    playerOne.score = +1;
                     }
                     else if (playerTwo.usedGesture == "scissors" || playerTwo.usedGesture == "lizard")
                     {
                         Console.WriteLine(playerTwo.name + " used " + playerTwo.usedGesture);
-                        Console.WriteLine(playerTwo.name + " wins! " + playerTwo.name + "earned 1 point!");
-                        playerTwo.score = +1;
+                    Console.ReadLine();
+                    Console.WriteLine(playerTwo.name + " wins! " + playerTwo.name + "earned 1 point!");
+                    Console.ReadLine();
+                    playerTwo.score = +1;
                     }
             
             }
             else if (playerOne.usedGesture == "scissors")
             {
                 Console.WriteLine(playerOne.name + " used " + playerOne.usedGesture);
-                    if (playerTwo.usedGesture == "paper" || playerTwo.usedGesture == "lizard")
+                Console.ReadLine();
+                if (playerTwo.usedGesture == "paper" || playerTwo.usedGesture == "lizard")
                     {
                     Console.WriteLine(playerTwo.name + " used " + playerTwo.usedGesture);
+                    Console.ReadLine();
                     Console.WriteLine(playerOne.name + " wins! " + playerOne.name + "earned 1 point");
+                    Console.ReadLine();
                     playerOne.score = +1;
                 }
                     else if (playerTwo.usedGesture == "rock" || playerTwo.usedGesture == "spock")
                     {
                     Console.WriteLine(playerTwo.name + " used " + playerTwo.usedGesture);
+                    Console.ReadLine();
                     Console.WriteLine(playerTwo.name + " wins! " + playerTwo.name + "earned 1 point!");
+                    Console.ReadLine();
                     playerTwo.score = +1;
                 }
             }
             else if (playerOne.usedGesture == playerTwo.usedGesture)
             {
                 Console.WriteLine("It is a tie. Try again");
-                //make gesture or play round again
+                Console.ReadLine();
+                PlayRound();
             }
                 
         }
@@ -112,6 +141,7 @@ namespace RPSLS
         {
             Console.WriteLine("Scissors cuts Paper, Paper covers Rock, Rock crushes Lizard, Lizard poisons Spock, Spock smashes Scissors,");
             Console.WriteLine("Scissors decapitates Lizard, Lizard eats Paper, Paper disproves Spock, Spock vaporizes Rock, and Rock crushes Scissors");
+            Console.ReadLine();
         }
     }
 }

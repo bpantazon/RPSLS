@@ -10,6 +10,12 @@ namespace RPSLS
     {
         static void Main(string[] args)
         {
+            Game game = new Game();
+            game.GetPlayers();
+            game.PlayRound();
+            game.CheckGestures();
+            game.DisplayRules();
         }
+
     }
 }
