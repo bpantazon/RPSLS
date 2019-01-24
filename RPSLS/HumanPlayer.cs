@@ -15,6 +15,11 @@ namespace RPSLS
            
         }
 
-        
+        public override void makeGesture()
+        {
+            Console.WriteLine("Which gesture would you like to use for this turn: Rock, Paper, Scissors, Lizard, or Spock?");
+            usedGesture = Console.ReadLine();
+            
+        }
     }
 }

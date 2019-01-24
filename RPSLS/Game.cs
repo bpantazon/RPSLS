@@ -35,7 +35,7 @@ namespace RPSLS
             else if (numberOfPlayers == 2)
             {
                 playerOne = new Human(playerOneName, 0);
-                playerTwo = new AI(playerTwoName, 0);
+                playerTwo = new Human(playerTwoName, 0);
             }
             else
             {
@@ -45,10 +45,11 @@ namespace RPSLS
 
         }
 
+
         public void displayRules()
         {
             Console.WriteLine("Scissors cuts PaperPaper covers Rock, Rock crushes Lizard,Lizard poisons Spock, Spock smashes Scissors,");
-            Console.WriteLine("Scissors decapitates Lizard, Lizard eats Paper, Paper disproves Spock, Spock vaporizes Rock, and Rock crushes Scissors");
+            Console.WriteLine(" Scissors decapitates Lizard, Lizard eats Paper, Paper disproves Spock, Spock vaporizes Rock, and Rock crushes Scissors");
         }
     }
 }
