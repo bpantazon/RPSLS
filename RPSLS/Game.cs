@@ -17,7 +17,7 @@ namespace RPSLS
         //constructor
         public Game()
         {
-
+     
         }
         //member methods
         public void GetPlayers()
@@ -67,7 +67,7 @@ namespace RPSLS
 
                 if (playerTwo.usedGesture == "paper" || playerTwo.usedGesture == "spock")
                     {
-                        Console.WriteLine(playerTwo.name + " used " + playerTwo.usedGesture);
+                    Console.WriteLine(playerTwo.name + " used " + playerTwo.usedGesture);
                     Console.ReadLine();
                     Console.WriteLine(playerTwo.name + " wins! " + playerTwo.name +" earned 1 point!");
                     Console.ReadLine();
@@ -75,7 +75,7 @@ namespace RPSLS
                     }
                     else if (playerTwo.usedGesture == "scissors" || playerTwo.usedGesture == "lizard")
                     {
-                        Console.WriteLine(playerOne.name + " used " + playerTwo.usedGesture);
+                    Console.WriteLine(playerOne.name + " used " + playerTwo.usedGesture);
                     Console.ReadLine();
                     Console.WriteLine(playerOne.name + " wins! " + playerOne.name + "earned 1 point!");
                     Console.ReadLine();
@@ -89,7 +89,7 @@ namespace RPSLS
 
                 if (playerTwo.usedGesture == "rock" || playerTwo.usedGesture == "spock")
                     {
-                        Console.WriteLine(playerTwo.name + " used " + playerTwo.usedGesture);
+                    Console.WriteLine(playerTwo.name + " used " + playerTwo.usedGesture);
                     Console.ReadLine();
                     Console.WriteLine(playerOne.name + " wins! " + playerOne.name + " earned 1 point!");
                     Console.ReadLine();
@@ -97,7 +97,7 @@ namespace RPSLS
                     }
                     else if (playerTwo.usedGesture == "scissors" || playerTwo.usedGesture == "lizard")
                     {
-                        Console.WriteLine(playerTwo.name + " used " + playerTwo.usedGesture);
+                    Console.WriteLine(playerTwo.name + " used " + playerTwo.usedGesture);
                     Console.ReadLine();
                     Console.WriteLine(playerTwo.name + " wins! " + playerTwo.name + "earned 1 point!");
                     Console.ReadLine();
@@ -109,6 +109,7 @@ namespace RPSLS
             {
                 Console.WriteLine(playerOne.name + " used " + playerOne.usedGesture);
                 Console.ReadLine();
+
                 if (playerTwo.usedGesture == "paper" || playerTwo.usedGesture == "lizard")
                     {
                     Console.WriteLine(playerTwo.name + " used " + playerTwo.usedGesture);
@@ -132,10 +133,38 @@ namespace RPSLS
                 Console.ReadLine();
                 PlayRound();
             }
+            else if (playerOne.usedGesture == "lizard")
+            {
+                Console.WriteLine(playerOne.name + " used " + playerOne.usedGesture);
+                Console.ReadLine();
+                
+                if (playerTwo.usedGesture == "paper" || playerTwo.usedGesture == "spock")
+                {
+                    Console.WriteLine(playerTwo.name + " used " + playerTwo.usedGesture);
+                    Console.ReadLine();
+                    Console.WriteLine(playerOne.name + " wins! " + playerOne.name + "earned 1 point");
+                    Console.ReadLine();
+                    playerOne.score = +1;
+                }
+                else if (playerTwo.usedGesture == "rock" || playerTwo.usedGesture == "scissors")
+                {
+                    Console.WriteLine(playerTwo.name + " used " + playerTwo.usedGesture);
+                    Console.ReadLine();
+                    Console.WriteLine(playerOne.name + " wins! " + playerOne.name + "earned 1 point");
+                    Console.ReadLine();
+                    playerOne.score = +1;
+                }
+            }
                 
         }
 
-        
+        public void CheckPlayerWins()
+        {
+            while (playerOne.score < 2 || playerTwo.score < 2)
+            {
+
+            }
+        }
 
         public void DisplayRules()
         {

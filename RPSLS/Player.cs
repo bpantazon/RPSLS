@@ -12,10 +12,11 @@ namespace RPSLS
         public string name;
         public int score;
         public string usedGesture;
+
         //constructor
         public Player()
         {
-
+            //gesture list
         }
         //member methods
         public virtual void MakeGesture()
