@@ -50,51 +50,68 @@ namespace RPSLS
             if (playerOne.usedGesture == "rock")
             {
                 Console.WriteLine(playerOne.name + " used " + playerOne.usedGesture);
-                    if (playerTwo.usedGesture == "rock")
-                    {
-                        Console.WriteLine(playerTwo.name + " used " + playerTwo.usedGesture);
-                        Console.WriteLine("It is a tie");
-                    }
-                    else if (playerTwo.usedGesture == "paper" || playerTwo.usedGesture == "spock")
+                   
+                    if (playerTwo.usedGesture == "paper" || playerTwo.usedGesture == "spock")
                     {
                         Console.WriteLine(playerTwo.name + " used " + playerTwo.usedGesture);
                         Console.WriteLine(playerTwo.name + " wins! " + playerTwo.name +" earned 1 point!");
+                        playerTwo.score = +1;
                     }
                     else if (playerTwo.usedGesture == "scissors" || playerTwo.usedGesture == "lizard")
                     {
                         Console.WriteLine(playerOne.name + " used " + playerTwo.usedGesture);
                         Console.WriteLine(playerOne.name + " wins! " + playerOne.name + "earned 1 point!");
+                        playerOne.score = +1;
                     }
             }
             else if (playerOne.usedGesture == "paper")
             {
                 Console.WriteLine(playerOne.name + " used " + playerOne.usedGesture);
-                    if (playerTwo.usedGesture == "paper")
-                    {
-                        Console.WriteLine(playerTwo.name + " used " + playerTwo.usedGesture);
-                        Console.WriteLine("It is a tie");
-                    }
-                    else if (playerTwo.usedGesture == "rock" || playerTwo.usedGesture == "spock")
+                   
+                    if (playerTwo.usedGesture == "rock" || playerTwo.usedGesture == "spock")
                     {
                         Console.WriteLine(playerTwo.name + " used " + playerTwo.usedGesture);
                         Console.WriteLine(playerOne.name + " wins! " + playerOne.name + " earned 1 point!");
+                        playerOne.score = +1;
                     }
                     else if (playerTwo.usedGesture == "scissors" || playerTwo.usedGesture == "lizard")
                     {
                         Console.WriteLine(playerTwo.name + " used " + playerTwo.usedGesture);
                         Console.WriteLine(playerTwo.name + " wins! " + playerTwo.name + "earned 1 point!");
+                        playerTwo.score = +1;
                     }
             
             }
             else if (playerOne.usedGesture == "scissors")
+            {
+                Console.WriteLine(playerOne.name + " used " + playerOne.usedGesture);
+                    if (playerTwo.usedGesture == "paper" || playerTwo.usedGesture == "lizard")
+                    {
+                    Console.WriteLine(playerTwo.name + " used " + playerTwo.usedGesture);
+                    Console.WriteLine(playerOne.name + " wins! " + playerOne.name + "earned 1 point");
+                    playerOne.score = +1;
+                }
+                    else if (playerTwo.usedGesture == "rock" || playerTwo.usedGesture == "spock")
+                    {
+                    Console.WriteLine(playerTwo.name + " used " + playerTwo.usedGesture);
+                    Console.WriteLine(playerTwo.name + " wins! " + playerTwo.name + "earned 1 point!");
+                    playerTwo.score = +1;
+                }
+            }
+            else if (playerOne.usedGesture == playerTwo.usedGesture)
+            {
+                Console.WriteLine("It is a tie. Try again");
+                //make gesture or play round again
+            }
                 
         }
 
+        
 
         public void DisplayRules()
         {
-            Console.WriteLine("Scissors cuts PaperPaper covers Rock, Rock crushes Lizard,Lizard poisons Spock, Spock smashes"+"\n"+ "Scissors,");
-            Console.WriteLine(" Scissors decapitates Lizard, Lizard eats Paper, Paper disproves Spock, Spock vaporizes Rock, and Rock crushes Scissors");
+            Console.WriteLine("Scissors cuts Paper, Paper covers Rock, Rock crushes Lizard, Lizard poisons Spock, Spock smashes Scissors,");
+            Console.WriteLine("Scissors decapitates Lizard, Lizard eats Paper, Paper disproves Spock, Spock vaporizes Rock, and Rock crushes Scissors");
         }
     }
 }
