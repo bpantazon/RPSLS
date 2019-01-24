@@ -1,0 +1,7 @@
+C:\Users\Ben Pantazon\Documents\devCodeCamp\C Sharp\RPSLS\RPSLS\RPSLS\bin\Debug\RPSLS.exe.config
+C:\Users\Ben Pantazon\Documents\devCodeCamp\C Sharp\RPSLS\RPSLS\RPSLS\bin\Debug\RPSLS.exe
+C:\Users\Ben Pantazon\Documents\devCodeCamp\C Sharp\RPSLS\RPSLS\RPSLS\bin\Debug\RPSLS.pdb
+C:\Users\Ben Pantazon\Documents\devCodeCamp\C Sharp\RPSLS\RPSLS\RPSLS\obj\Debug\RPSLS.csprojAssemblyReference.cache
+C:\Users\Ben Pantazon\Documents\devCodeCamp\C Sharp\RPSLS\RPSLS\RPSLS\obj\Debug\RPSLS.csproj.CoreCompileInputs.cache
+C:\Users\Ben Pantazon\Documents\devCodeCamp\C Sharp\RPSLS\RPSLS\RPSLS\obj\Debug\RPSLS.exe
+C:\Users\Ben Pantazon\Documents\devCodeCamp\C Sharp\RPSLS\RPSLS\RPSLS\obj\Debug\RPSLS.pdb

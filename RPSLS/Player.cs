@@ -6,24 +6,22 @@ using System.Threading.Tasks;
 
 namespace RPSLS
 {
-    class Player
+    public class Player
     {
         //member variables
         public string name;
         public int score;
         public string usedGesture;
         //constructor
-        public Player(string name, int score, string usedGesture)
+        public Player()
         {
-            this.name = name;
-            this.score = score;
-            this.usedGesture = usedGesture;
 
         }
         //member methods
-        public void makeGesture()
+        public virtual void MakeGesture()
         {
-            Console.WriteLine("Player " + name + "used " + usedGesture + "!");
+           
+           
         }
     }
 }

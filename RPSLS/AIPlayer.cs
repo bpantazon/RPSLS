@@ -14,7 +14,7 @@ namespace RPSLS
             this.score = score;
         }
 
-        public override void makeGesture()
+        public override void MakeGesture()
         {
             Random r = new Random();
 
