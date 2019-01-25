@@ -12,8 +12,8 @@ namespace RPSLS
         Player playerOne;
         Player playerTwo;
         public int numberOfPlayers;
-        //public string playerOneName;
-        //public string playerTwoName;
+        
+       
         //constructor
         public Game()
         {
@@ -55,18 +55,26 @@ namespace RPSLS
         
         public void CheckPlayerScore() //does Player reset if instantiated again? 
         {
+            do
+            {
+                PlayRound();
+
+            }
+            while (playerOne.score < 2 || playerTwo.score < 2);
+
+
             if (playerOne.score == 2)
             {
                 Console.WriteLine(playerOne.name + " wins the game!");
                 Console.ReadLine();
-                
+
                 //GetPlayers();
             }
             else if (playerTwo.score == 2)
             {
                 Console.WriteLine(playerOne.name + " wins the game!");
                 Console.ReadLine();
-                
+
                 //GetPlayers();
             }
         }
@@ -84,7 +92,7 @@ namespace RPSLS
                     Console.ReadLine();
                     Console.WriteLine(playerTwo.name + " wins! " + playerTwo.name +" earned 1 point!");
                     Console.ReadLine();
-                    playerTwo.score = +1;
+                    playerTwo.score++;
                     }
                     else if (playerTwo.usedGesture == "scissors" || playerTwo.usedGesture == "lizard")
                     {
@@ -92,7 +100,7 @@ namespace RPSLS
                     Console.ReadLine();
                     Console.WriteLine(playerOne.name + " wins! " + playerOne.name + " earned 1 point!");
                     Console.ReadLine();
-                    playerOne.score = +1;
+                    playerOne.score++;
                     }
             }
             else if (playerOne.usedGesture == "paper")
@@ -106,7 +114,7 @@ namespace RPSLS
                     Console.ReadLine();
                     Console.WriteLine(playerOne.name + " wins! " + playerOne.name + " earned 1 point!");
                     Console.ReadLine();
-                    playerOne.score = +1;
+                    playerOne.score++;
                     }
                     else if (playerTwo.usedGesture == "scissors" || playerTwo.usedGesture == "lizard")
                     {
@@ -114,7 +122,7 @@ namespace RPSLS
                     Console.ReadLine();
                     Console.WriteLine(playerTwo.name + " wins! " + playerTwo.name + " earned 1 point!");
                     Console.ReadLine();
-                    playerTwo.score = +1;
+                    playerTwo.score++;
                     }
             
             }
@@ -129,7 +137,7 @@ namespace RPSLS
                     Console.ReadLine();
                     Console.WriteLine(playerOne.name + " wins! " + playerOne.name + " earned 1 point");
                     Console.ReadLine();
-                    playerOne.score = +1;
+                    playerOne.score++;
                 }
                     else if (playerTwo.usedGesture == "rock" || playerTwo.usedGesture == "spock")
                     {
@@ -137,7 +145,7 @@ namespace RPSLS
                     Console.ReadLine();
                     Console.WriteLine(playerTwo.name + " wins! " + playerTwo.name + " earned 1 point!");
                     Console.ReadLine();
-                    playerTwo.score = +1;
+                    playerTwo.score++;
                 }
             }
             else if (playerOne.usedGesture == playerTwo.usedGesture)
@@ -157,7 +165,7 @@ namespace RPSLS
                     Console.ReadLine();
                     Console.WriteLine(playerOne.name + " wins! " + playerOne.name + " earned 1 point");
                     Console.ReadLine();
-                    playerOne.score = +1;
+                    playerOne.score++;
                 }
                 else if (playerTwo.usedGesture == "rock" || playerTwo.usedGesture == "scissors")
                 {
@@ -165,7 +173,7 @@ namespace RPSLS
                     Console.ReadLine();
                     Console.WriteLine(playerTwo.name + " wins! " + playerTwo.name + " earned 1 point");
                     Console.ReadLine();
-                    playerOne.score = +1;
+                    playerOne.score++;
                 }
             }
             else if (playerOne.usedGesture == "spock")
@@ -179,7 +187,7 @@ namespace RPSLS
                     Console.ReadLine();
                     Console.WriteLine(playerOne.name + " wins! " + playerOne.name + " earned 1 point");
                     Console.ReadLine();
-                    playerOne.score = +1;
+                    playerOne.score++;
                 }
                 else if (playerTwo.usedGesture == "paper" || playerTwo.usedGesture == "lizard")
                 {
@@ -187,7 +195,7 @@ namespace RPSLS
                     Console.ReadLine();
                     Console.WriteLine(playerTwo.name + " wins! " + playerTwo.name + " earned 1 point!");
                     Console.ReadLine();
-                    playerTwo.score = +1;
+                    playerTwo.score++;
                 }
             }
                 
@@ -199,7 +207,7 @@ namespace RPSLS
 
         public void DisplayRules()
         {
-            Console.WriteLine("Scissors cuts Paper, Paper covers Rock, Rock crushes Lizard, Lizard poisons Spock, Spock smashes Scissors,");
+            Console.WriteLine("Rules: Scissors cuts Paper, Paper covers Rock, Rock crushes Lizard, Lizard poisons Spock, Spock smashes Scissors,");
             Console.WriteLine("Scissors decapitates Lizard, Lizard eats Paper, Paper disproves Spock, Spock vaporizes Rock, and Rock crushes Scissors");
             Console.ReadLine();
         }
