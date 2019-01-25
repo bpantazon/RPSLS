@@ -16,10 +16,8 @@ namespace RPSLS
 
         public override void MakeGesture()
         {
-            Random r = new Random();
-
-            List<string> gestures = new List<string>() { "rock", "paper", "scissors", "lizard", "spock" };
-            int x = r.Next(gestures.Count);
+            Random random = new Random();
+            int x = random.Next(gestures.Count);
             usedGesture = gestures[x];
             
         }

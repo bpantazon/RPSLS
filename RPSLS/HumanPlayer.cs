@@ -17,9 +17,28 @@ namespace RPSLS
 
         public override void MakeGesture()
         {
-            Console.WriteLine("Which gesture would you like to use for this turn: Rock, Paper, Scissors, Lizard, or Spock?");
-            usedGesture = Console.ReadLine();
+            int i;
+            Console.WriteLine("Which gesture would you like to use for this turn? Type '0' for Rock, '1' for Paper, '2' for Scissors, '3' for Lizard, and '4' for Spock");
+
+            //doesn't catch for out of range index
+            try
+            {
+                i = Convert.ToInt32(Console.ReadLine());
+                usedGesture = gestures[i];
+            } 
+            catch (ArgumentOutOfRangeException)
+            {
+                Console.WriteLine("Error: Choose an option from 0 to 4");
+                Console.ReadLine();
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Error: Must enter an integer");
+                Console.ReadLine();
+            }
             
+
+
         }
     }
 }

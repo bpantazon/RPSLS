@@ -59,19 +59,19 @@ namespace RPSLS
             {
                 Console.WriteLine(playerOne.name + " wins the game!");
                 Console.ReadLine();
-                Console.WriteLine("Player names and scores will reset");
+                
                 //GetPlayers();
             }
             else if (playerTwo.score == 2)
             {
                 Console.WriteLine(playerOne.name + " wins the game!");
                 Console.ReadLine();
-                Console.WriteLine("Player names and scores will reset");
+                
                 //GetPlayers();
             }
         }
 
-        public void CheckGestures() //Finish for all gestures. Condense if there is time
+        public void CheckGestures() 
         {
             if (playerOne.usedGesture == "rock")
             {
@@ -88,7 +88,7 @@ namespace RPSLS
                     }
                     else if (playerTwo.usedGesture == "scissors" || playerTwo.usedGesture == "lizard")
                     {
-                    Console.WriteLine(playerOne.name + " used " + playerTwo.usedGesture);
+                    Console.WriteLine(playerTwo.name + " used " + playerTwo.usedGesture);
                     Console.ReadLine();
                     Console.WriteLine(playerOne.name + " wins! " + playerOne.name + " earned 1 point!");
                     Console.ReadLine();
@@ -163,9 +163,31 @@ namespace RPSLS
                 {
                     Console.WriteLine(playerTwo.name + " used " + playerTwo.usedGesture);
                     Console.ReadLine();
+                    Console.WriteLine(playerTwo.name + " wins! " + playerTwo.name + " earned 1 point");
+                    Console.ReadLine();
+                    playerOne.score = +1;
+                }
+            }
+            else if (playerOne.usedGesture == "spock")
+            {
+                Console.WriteLine(playerOne.name + " used " + playerOne.usedGesture);
+                Console.ReadLine();
+                
+                if (playerTwo.usedGesture == "scissors" || playerTwo.usedGesture == "rock")
+                {
+                    Console.WriteLine(playerTwo.name + " used " + playerTwo.usedGesture);
+                    Console.ReadLine();
                     Console.WriteLine(playerOne.name + " wins! " + playerOne.name + " earned 1 point");
                     Console.ReadLine();
                     playerOne.score = +1;
+                }
+                else if (playerTwo.usedGesture == "paper" || playerTwo.usedGesture == "lizard")
+                {
+                    Console.WriteLine(playerTwo.name + " used " + playerTwo.usedGesture);
+                    Console.ReadLine();
+                    Console.WriteLine(playerTwo.name + " wins! " + playerTwo.name + " earned 1 point!");
+                    Console.ReadLine();
+                    playerTwo.score = +1;
                 }
             }
                 
