@@ -59,8 +59,11 @@ namespace RPSLS
             //{
             //    Console.WriteLine("")
             //}
-           
-            
+
+            Console.WriteLine("What is the first player's name?");
+            playerOneName = Console.ReadLine();
+            Console.WriteLine("What is the second player's name?");
+            playerTwoName = Console.ReadLine();
             if (numberOfPlayers == 1){
                 playerOne = new Human(playerOneName, 0);
                 playerTwo = new AI(playerTwoName, 0);
