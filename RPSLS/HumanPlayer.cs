@@ -28,12 +28,17 @@ namespace RPSLS
             } 
             catch (ArgumentOutOfRangeException)
             {
-                Console.WriteLine("Error: Choose an option from 0 to 4");
+                Console.WriteLine("Stop it. Just, stop it. Choose an option from 0 to 4");
                 Console.ReadLine();
             }
             catch (FormatException)
             {
-                Console.WriteLine("Error: Must enter an integer");
+                Console.WriteLine("Staaaaahp. Error: Must enter an integer");
+                Console.ReadLine();
+            }
+            catch (NullReferenceException)
+            {
+                Console.WriteLine("Put something in there");
                 Console.ReadLine();
             }
             

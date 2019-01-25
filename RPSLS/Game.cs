@@ -12,7 +12,10 @@ namespace RPSLS
         Player playerOne;
         Player playerTwo;
         public int numberOfPlayers;
-        
+        //public List<string> players = new List<string>() { "rock", "paper", "scissors", "lizard", "spock" };
+        List<string> numberOfPlayersOption = new List<string>() { "1", "2" };
+        string playerOneName;
+        string playerTwoName;
        
         //constructor
         public Game()
@@ -20,14 +23,44 @@ namespace RPSLS
      
         }
         //member methods
+        
+        public void AskForPlayerOne()
+        {
+            
+            Console.WriteLine("What is the first player's name?");
+            playerOneName = Console.ReadLine();
+            if (playerOneName == null)
+            {
+                Console.WriteLine("Player needs a name");
+                Console.ReadLine();
+                AskForPlayerOne();
+            }
+
+        }
+
+        public void AskForPlayerTwo()
+        {
+            
+            Console.WriteLine("What is the second player's name?");
+            playerTwoName = Console.ReadLine();
+            if (playerTwoName == null)
+            {
+                Console.WriteLine("Player needs a name");
+                Console.ReadLine();
+                AskForPlayerTwo();
+            }
+        }
+      
         public void GetPlayers()
         {
             Console.WriteLine("How many players are there? Are there '1' or '2'?");
             numberOfPlayers = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("What is the first player's name?");
-            string playerOneName = Console.ReadLine();
-            Console.WriteLine("What is the second player's name?");
-            string playerTwoName = Console.ReadLine();
+            //catch (FormatException)
+            //{
+            //    Console.WriteLine("")
+            //}
+           
+            
             if (numberOfPlayers == 1){
                 playerOne = new Human(playerOneName, 0);
                 playerTwo = new AI(playerTwoName, 0);
@@ -36,7 +69,7 @@ namespace RPSLS
             {
                 playerOne = new Human(playerOneName, 0);
                 playerTwo = new Human(playerTwoName, 0);
-            }
+            }           
             else
             {
                 GetPlayers();
@@ -55,30 +88,24 @@ namespace RPSLS
         
         public void CheckPlayerScore() //does Player reset if instantiated again? 
         {
-            //do
-            //{
-            //    PlayRound();
-            //}
-            //while (playerOne.score < 2 || playerTwo.score < 2);
-
-
             if (playerOne.score == 2)
             {
                 Console.WriteLine(playerOne.name + " wins the game!");
                 Console.ReadLine();
 
-                //GetPlayers();
             }
             else if (playerTwo.score == 2)
             {
                 Console.WriteLine(playerOne.name + " wins the game!");
                 Console.ReadLine();
 
-                //GetPlayers();
             }
             else
             {
+                playerOne.usedGesture = null;
+                playerTwo.usedGesture = null;
                 PlayRound();
+
             }
         }
 
