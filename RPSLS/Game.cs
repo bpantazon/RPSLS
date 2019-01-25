@@ -55,12 +55,11 @@ namespace RPSLS
         
         public void CheckPlayerScore() //does Player reset if instantiated again? 
         {
-            do
-            {
-                PlayRound();
-
-            }
-            while (playerOne.score < 2 || playerTwo.score < 2);
+            //do
+            //{
+            //    PlayRound();
+            //}
+            //while (playerOne.score < 2 || playerTwo.score < 2);
 
 
             if (playerOne.score == 2)
@@ -76,6 +75,10 @@ namespace RPSLS
                 Console.ReadLine();
 
                 //GetPlayers();
+            }
+            else
+            {
+                PlayRound();
             }
         }
 
