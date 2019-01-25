@@ -44,20 +44,33 @@ namespace RPSLS
             
 
         }
-
+        //create function that calls for round
         public void PlayRound()
         {
             playerOne.MakeGesture();
             playerTwo.MakeGesture();
+            CheckGestures();
+            CheckPlayerScore();
+        }
+        
+        public void CheckPlayerScore() //does Player reset if instantiated again? 
+        {
+            if (playerOne.score == 2)
+            {
+                Console.WriteLine(playerOne.name + " wins the game!");
+                Console.ReadLine();
+                Console.WriteLine("Player names and scores will reset");
+                //GetPlayers();
+            }
+            else if (playerTwo.score == 2)
+            {
+                Console.WriteLine(playerOne.name + " wins the game!");
+                Console.ReadLine();
+                Console.WriteLine("Player names and scores will reset");
+                //GetPlayers();
+            }
         }
 
-        ////public void CheckPlayerScore()
-        ////{
-        ////    while (Player.score < 2)
-        ////    {
-        ////        PlayRound();
-        ////    }
-        ////}
         public void CheckGestures() //Finish for all gestures. Condense if there is time
         {
             if (playerOne.usedGesture == "rock")
@@ -77,7 +90,7 @@ namespace RPSLS
                     {
                     Console.WriteLine(playerOne.name + " used " + playerTwo.usedGesture);
                     Console.ReadLine();
-                    Console.WriteLine(playerOne.name + " wins! " + playerOne.name + "earned 1 point!");
+                    Console.WriteLine(playerOne.name + " wins! " + playerOne.name + " earned 1 point!");
                     Console.ReadLine();
                     playerOne.score = +1;
                     }
@@ -99,7 +112,7 @@ namespace RPSLS
                     {
                     Console.WriteLine(playerTwo.name + " used " + playerTwo.usedGesture);
                     Console.ReadLine();
-                    Console.WriteLine(playerTwo.name + " wins! " + playerTwo.name + "earned 1 point!");
+                    Console.WriteLine(playerTwo.name + " wins! " + playerTwo.name + " earned 1 point!");
                     Console.ReadLine();
                     playerTwo.score = +1;
                     }
@@ -114,7 +127,7 @@ namespace RPSLS
                     {
                     Console.WriteLine(playerTwo.name + " used " + playerTwo.usedGesture);
                     Console.ReadLine();
-                    Console.WriteLine(playerOne.name + " wins! " + playerOne.name + "earned 1 point");
+                    Console.WriteLine(playerOne.name + " wins! " + playerOne.name + " earned 1 point");
                     Console.ReadLine();
                     playerOne.score = +1;
                 }
@@ -122,7 +135,7 @@ namespace RPSLS
                     {
                     Console.WriteLine(playerTwo.name + " used " + playerTwo.usedGesture);
                     Console.ReadLine();
-                    Console.WriteLine(playerTwo.name + " wins! " + playerTwo.name + "earned 1 point!");
+                    Console.WriteLine(playerTwo.name + " wins! " + playerTwo.name + " earned 1 point!");
                     Console.ReadLine();
                     playerTwo.score = +1;
                 }
@@ -142,7 +155,7 @@ namespace RPSLS
                 {
                     Console.WriteLine(playerTwo.name + " used " + playerTwo.usedGesture);
                     Console.ReadLine();
-                    Console.WriteLine(playerOne.name + " wins! " + playerOne.name + "earned 1 point");
+                    Console.WriteLine(playerOne.name + " wins! " + playerOne.name + " earned 1 point");
                     Console.ReadLine();
                     playerOne.score = +1;
                 }
@@ -150,21 +163,17 @@ namespace RPSLS
                 {
                     Console.WriteLine(playerTwo.name + " used " + playerTwo.usedGesture);
                     Console.ReadLine();
-                    Console.WriteLine(playerOne.name + " wins! " + playerOne.name + "earned 1 point");
+                    Console.WriteLine(playerOne.name + " wins! " + playerOne.name + " earned 1 point");
                     Console.ReadLine();
                     playerOne.score = +1;
                 }
             }
                 
         }
+        
+        
 
-        public void CheckPlayerWins()
-        {
-            while (playerOne.score < 2 || playerTwo.score < 2)
-            {
 
-            }
-        }
 
         public void DisplayRules()
         {
