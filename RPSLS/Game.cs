@@ -24,25 +24,40 @@ namespace RPSLS
         }
         //member methods
         
+       
+
+        public void AskForPlayerOne()
+        {
+            Console.WriteLine("What is the first player's name?");
+            playerOneName = Console.ReadLine();
+            CheckPlayerOneName();
+        }
         public void CheckPlayerOneName()
         {
            
-            if (playerOneName == null)
+
+            if (playerOneName == String.Empty)
             {
                 Console.WriteLine("Player needs a name");
                 Console.ReadLine();
-                CheckPlayerOneName();
+                AskForPlayerOne();
             }
 
         }
-
+        public void AskForPlayerTwo()
+        {
+            Console.WriteLine("What is the second player's name?");
+            playerTwoName = Console.ReadLine();
+            CheckPlayerTwoName();
+        }
         public void CheckPlayerTwoName()
         {
-            if (playerTwoName == null)
+            
+            if (playerTwoName == String.Empty)
             {
                 Console.WriteLine("Player needs a name");
                 Console.ReadLine();
-                CheckPlayerTwoName();
+                AskForPlayerTwo();
             }
         }
       
@@ -55,12 +70,10 @@ namespace RPSLS
             //    Console.WriteLine("")
             //}
 
-            Console.WriteLine("What is the first player's name?");
-            playerOneName = Console.ReadLine();
-            CheckPlayerOneName();
-            Console.WriteLine("What is the second player's name?");
-            playerTwoName = Console.ReadLine();
-            CheckPlayerTwoName();
+            AskForPlayerOne();
+           
+            AskForPlayerTwo();
+          
         
             if (numberOfPlayers == 1){
                 playerOne = new Human(playerOneName, 0);
