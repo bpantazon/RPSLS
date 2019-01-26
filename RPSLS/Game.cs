@@ -24,30 +24,25 @@ namespace RPSLS
         }
         //member methods
         
-        public void AskForPlayerOne()
+        public void CheckPlayerOneName()
         {
-            
-            Console.WriteLine("What is the first player's name?");
-            playerOneName = Console.ReadLine();
+           
             if (playerOneName == null)
             {
                 Console.WriteLine("Player needs a name");
                 Console.ReadLine();
-                AskForPlayerOne();
+                CheckPlayerOneName();
             }
 
         }
 
-        public void AskForPlayerTwo()
+        public void CheckPlayerTwoName()
         {
-            
-            Console.WriteLine("What is the second player's name?");
-            playerTwoName = Console.ReadLine();
             if (playerTwoName == null)
             {
                 Console.WriteLine("Player needs a name");
                 Console.ReadLine();
-                AskForPlayerTwo();
+                CheckPlayerTwoName();
             }
         }
       
@@ -62,8 +57,11 @@ namespace RPSLS
 
             Console.WriteLine("What is the first player's name?");
             playerOneName = Console.ReadLine();
+            CheckPlayerOneName();
             Console.WriteLine("What is the second player's name?");
             playerTwoName = Console.ReadLine();
+            CheckPlayerTwoName();
+        
             if (numberOfPlayers == 1){
                 playerOne = new Human(playerOneName, 0);
                 playerTwo = new AI(playerTwoName, 0);
@@ -88,7 +86,23 @@ namespace RPSLS
             CheckGestures();
             CheckPlayerScore();
         }
-        
+        public void AskToRestartGame()
+        {
+            string restartGame;
+            Console.WriteLine("Would you like to play another game?");
+            restartGame = Console.ReadLine();
+            if (restartGame == "yes")
+            {
+                playerOne.usedGesture = null;
+                playerOne.name = null;
+                playerOne.score = 0;
+                playerTwo.usedGesture = null;
+                playerTwo.name = null;
+                playerTwo.score = 0;
+                //need to make a playGame();
+            }
+
+        }
         public void CheckPlayerScore() //does Player reset if instantiated again? 
         {
             if (playerOne.score == 2)
@@ -99,7 +113,7 @@ namespace RPSLS
             }
             else if (playerTwo.score == 2)
             {
-                Console.WriteLine(playerOne.name + " wins the game!");
+                Console.WriteLine(playerTwo.name + " wins the game!");
                 Console.ReadLine();
 
             }
