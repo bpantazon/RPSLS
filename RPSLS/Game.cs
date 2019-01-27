@@ -64,11 +64,15 @@ namespace RPSLS
         public void GetPlayers()
         {
             Console.WriteLine("How many players are there? Are there '1' or '2'?");
-            numberOfPlayers = Convert.ToInt32(Console.ReadLine());
-            //catch (FormatException)
-            //{
-            //    Console.WriteLine("")
-            //}
+            try
+            {  
+                numberOfPlayers = Convert.ToInt32(Console.ReadLine());
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Enter an integer of '1' or '2'");
+                GetPlayers();
+            }
 
             AskForPlayerOne();
            
@@ -233,7 +237,7 @@ namespace RPSLS
                     Console.ReadLine();
                     Console.WriteLine(playerTwo.name + " wins! " + playerTwo.name + " earned 1 point");
                     Console.ReadLine();
-                    playerOne.score++;
+                    playerTwo.score++;
                 }
             }
             else if (playerOne.usedGesture == "spock")
