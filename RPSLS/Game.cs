@@ -35,7 +35,7 @@ namespace RPSLS
         public void CheckPlayerOneName()
         {
            
-
+            //why is String.Empty a different color
             if (playerOneName == String.Empty)
             {
                 Console.WriteLine("Player needs a name");
@@ -73,7 +73,11 @@ namespace RPSLS
                 Console.WriteLine("Enter an integer of '1' or '2'");
                 GetPlayers();
             }
-
+            if (numberOfPlayers < 1 || numberOfPlayers > 2)
+            {
+                Console.WriteLine("Enter '1' or '2'");
+                GetPlayers();
+            }
             AskForPlayerOne();
            
             AskForPlayerTwo();
