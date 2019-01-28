@@ -117,7 +117,11 @@ namespace RPSLS
         {
             string restartGame;
             Console.WriteLine("Would you like to play another game?");
-            restartGame = Console.ReadLine();
+            //try
+            //{
+                restartGame = Console.ReadLine();
+            
+            
             if (restartGame == "yes")
             {
                 playerOne.usedGesture = null;
@@ -136,13 +140,13 @@ namespace RPSLS
             {
                 Console.WriteLine(playerOne.name + " wins the game!");
                 Console.ReadLine();
-
+                playerOne.score = 0;
             }
             else if (playerTwo.score == 2)
             {
                 Console.WriteLine(playerTwo.name + " wins the game!");
                 Console.ReadLine();
-
+                playerTwo.score = 0;
             }
             else
             {
@@ -157,13 +161,11 @@ namespace RPSLS
         {
             if (playerOne.usedGesture == "rock")
             {
-                Console.WriteLine(playerOne.name + " used " + playerOne.usedGesture);
-                Console.ReadLine();
+                DeclarePlayerOneGesture();
 
                 if (playerTwo.usedGesture == "paper" || playerTwo.usedGesture == "spock")
                     {
-                    Console.WriteLine(playerTwo.name + " used " + playerTwo.usedGesture);
-                    Console.ReadLine();
+                    DeclarePlayerTwoGesture();
                     Console.WriteLine(playerTwo.name + " wins! " + playerTwo.name +" earned 1 point!");
                     Console.ReadLine();
                     playerTwo.score++;
@@ -265,18 +267,35 @@ namespace RPSLS
                 }
                 else if (playerTwo.usedGesture == "paper" || playerTwo.usedGesture == "lizard")
                 {
-                    Console.WriteLine(playerTwo.name + " used " + playerTwo.usedGesture);
-                    Console.ReadLine();
-                    Console.WriteLine(playerTwo.name + " wins! " + playerTwo.name + " earned 1 point!");
-                    Console.ReadLine();
-                    playerTwo.score++;
+                    DeclarePlayerTwoGesture();
+                    GivePlayerTwoPoint();
                 }
             }
                 
         }
         
-        
-
+        public void DeclarePlayerTwoGesture()
+        {
+            Console.WriteLine(playerTwo.name + " used " + playerTwo.usedGesture);
+            Console.ReadLine();
+        }
+        public void GivePlayerTwoPoint()
+        {
+            Console.WriteLine(playerTwo.name + " wins! " + playerTwo.name + " earned 1 point!");
+            Console.ReadLine();
+            playerTwo.score++;
+        }
+        public void DeclarePlayerOneGesture()
+        {
+            Console.WriteLine(playerOne.name + " used " + playerOne.usedGesture);
+            Console.ReadLine();
+        }
+        public void GivePlayerOnePoint()
+        {
+            Console.WriteLine(playerOne.name + " wins! " + playerOne.name + " earned 1 point!");
+            Console.ReadLine();
+            playerOne.score++;
+        }
 
 
         public void DisplayRules()

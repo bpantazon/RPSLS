@@ -12,6 +12,7 @@ namespace RPSLS
         {
             this.name = name;
             this.score = score;
+            
         }
 
         public override void MakeGesture()
