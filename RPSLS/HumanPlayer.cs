@@ -19,7 +19,7 @@ namespace RPSLS
         public override void MakeGesture()
         {
             int i;
-            Console.WriteLine("Which gesture would you like to use for this turn? Type '0' for Rock, '1' for Paper, '2' for Scissors, '3' for Lizard, and '4' for Spock");
+            Console.WriteLine("Which gesture would " + name + " like to use for this turn? Type '0' for Rock, '1' for Paper, '2' for Scissors, '3' for Lizard, and '4' for Spock");
 
             //doesn't catch for out of range index
             try
@@ -31,16 +31,19 @@ namespace RPSLS
             {
                 Console.WriteLine("Stop it. Just, stop it. Choose an option from 0 to 4");
                 Console.ReadLine();
+                MakeGesture();
             }
             catch (FormatException)
             {
                 Console.WriteLine("Staaaaahp. Error: Must enter an integer");
                 Console.ReadLine();
+                MakeGesture();
             }
             catch (NullReferenceException)
             {
                 Console.WriteLine("Put something in there");
                 Console.ReadLine();
+                MakeGesture();
             }
             
 

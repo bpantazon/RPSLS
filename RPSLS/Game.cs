@@ -84,11 +84,8 @@ namespace RPSLS
                 Console.WriteLine("Enter '1' or '2'");
                 GetPlayers();
             }
-            AskForPlayerOne();
-           
-            AskForPlayerTwo();
-          
-        
+            AskForPlayerOne();          
+            AskForPlayerTwo();       
             if (numberOfPlayers == 1){
                 playerOne = new Human(playerOneName, 0);
                 playerTwo = new AI(playerTwoName, 0);
@@ -105,7 +102,7 @@ namespace RPSLS
             
 
         }
-        //create function that calls for round
+        
         public void PlayRound()
         {
             playerOne.MakeGesture();
@@ -116,10 +113,8 @@ namespace RPSLS
         public void AskToRestartGame()
         {
             string restartGame;
-            Console.WriteLine("Would you like to play another game?");
-            //try
-            //{
-                restartGame = Console.ReadLine();
+            Console.WriteLine("Would you like to play another game? Type 'yes' if you do.");
+            restartGame = Console.ReadLine();
             
             
             if (restartGame == "yes")
@@ -157,121 +152,93 @@ namespace RPSLS
             }
         }
 
-        public void CheckGestures() 
+        public void CheckGestures()
         {
-            if (playerOne.usedGesture == "rock")
+            if (playerOne.usedGesture == playerTwo.usedGesture)
+            {
+                DeclarePlayerOneGesture();
+                DeclarePlayerTwoGesture();
+                Console.WriteLine("It is a tie. Try again");
+                Console.ReadLine();
+                PlayRound();
+            }
+            else if (playerOne.usedGesture == "rock")
             {
                 DeclarePlayerOneGesture();
 
                 if (playerTwo.usedGesture == "paper" || playerTwo.usedGesture == "spock")
                     {
                     DeclarePlayerTwoGesture();
-                    Console.WriteLine(playerTwo.name + " wins! " + playerTwo.name +" earned 1 point!");
-                    Console.ReadLine();
-                    playerTwo.score++;
+                    GivePlayerTwoPoint();
                     }
                     else if (playerTwo.usedGesture == "scissors" || playerTwo.usedGesture == "lizard")
                     {
-                    Console.WriteLine(playerTwo.name + " used " + playerTwo.usedGesture);
-                    Console.ReadLine();
-                    Console.WriteLine(playerOne.name + " wins! " + playerOne.name + " earned 1 point!");
-                    Console.ReadLine();
-                    playerOne.score++;
+                    DeclarePlayerTwoGesture();
+                    GivePlayerOnePoint();
                     }
             }
             else if (playerOne.usedGesture == "paper")
             {
-                Console.WriteLine(playerOne.name + " used " + playerOne.usedGesture);
-                Console.ReadLine();
+                DeclarePlayerOneGesture();
 
                 if (playerTwo.usedGesture == "rock" || playerTwo.usedGesture == "spock")
                     {
-                    Console.WriteLine(playerTwo.name + " used " + playerTwo.usedGesture);
-                    Console.ReadLine();
-                    Console.WriteLine(playerOne.name + " wins! " + playerOne.name + " earned 1 point!");
-                    Console.ReadLine();
-                    playerOne.score++;
+                    DeclarePlayerTwoGesture();
+                    GivePlayerOnePoint();
                     }
                     else if (playerTwo.usedGesture == "scissors" || playerTwo.usedGesture == "lizard")
                     {
-                    Console.WriteLine(playerTwo.name + " used " + playerTwo.usedGesture);
-                    Console.ReadLine();
-                    Console.WriteLine(playerTwo.name + " wins! " + playerTwo.name + " earned 1 point!");
-                    Console.ReadLine();
-                    playerTwo.score++;
+                    DeclarePlayerTwoGesture();
+                    GivePlayerTwoPoint();
                     }
             
             }
             else if (playerOne.usedGesture == "scissors")
             {
-                Console.WriteLine(playerOne.name + " used " + playerOne.usedGesture);
-                Console.ReadLine();
+                DeclarePlayerOneGesture();
 
                 if (playerTwo.usedGesture == "paper" || playerTwo.usedGesture == "lizard")
                     {
-                    Console.WriteLine(playerTwo.name + " used " + playerTwo.usedGesture);
-                    Console.ReadLine();
-                    Console.WriteLine(playerOne.name + " wins! " + playerOne.name + " earned 1 point");
-                    Console.ReadLine();
-                    playerOne.score++;
+                    DeclarePlayerTwoGesture();
+                    GivePlayerOnePoint();
                 }
                     else if (playerTwo.usedGesture == "rock" || playerTwo.usedGesture == "spock")
                     {
-                    Console.WriteLine(playerTwo.name + " used " + playerTwo.usedGesture);
-                    Console.ReadLine();
-                    Console.WriteLine(playerTwo.name + " wins! " + playerTwo.name + " earned 1 point!");
-                    Console.ReadLine();
-                    playerTwo.score++;
+                    DeclarePlayerTwoGesture();
+                    GivePlayerTwoPoint();
                 }
             }
-            else if (playerOne.usedGesture == playerTwo.usedGesture)
-            {
-                Console.WriteLine("It is a tie. Try again");
-                Console.ReadLine();
-                PlayRound();
-            }
+           
             else if (playerOne.usedGesture == "lizard")
             {
-                Console.WriteLine(playerOne.name + " used " + playerOne.usedGesture);
-                Console.ReadLine();
+                DeclarePlayerOneGesture();
                 
                 if (playerTwo.usedGesture == "paper" || playerTwo.usedGesture == "spock")
                 {
-                    Console.WriteLine(playerTwo.name + " used " + playerTwo.usedGesture);
-                    Console.ReadLine();
-                    Console.WriteLine(playerOne.name + " wins! " + playerOne.name + " earned 1 point");
-                    Console.ReadLine();
-                    playerOne.score++;
+                    DeclarePlayerTwoGesture();
+                    GivePlayerOnePoint();
                 }
                 else if (playerTwo.usedGesture == "rock" || playerTwo.usedGesture == "scissors")
                 {
-                    Console.WriteLine(playerTwo.name + " used " + playerTwo.usedGesture);
-                    Console.ReadLine();
-                    Console.WriteLine(playerTwo.name + " wins! " + playerTwo.name + " earned 1 point");
-                    Console.ReadLine();
-                    playerTwo.score++;
+                    DeclarePlayerTwoGesture();
+                    GivePlayerTwoPoint();
                 }
             }
             else if (playerOne.usedGesture == "spock")
             {
-                Console.WriteLine(playerOne.name + " used " + playerOne.usedGesture);
-                Console.ReadLine();
+                DeclarePlayerOneGesture();
                 
                 if (playerTwo.usedGesture == "scissors" || playerTwo.usedGesture == "rock")
                 {
-                    Console.WriteLine(playerTwo.name + " used " + playerTwo.usedGesture);
-                    Console.ReadLine();
-                    Console.WriteLine(playerOne.name + " wins! " + playerOne.name + " earned 1 point");
-                    Console.ReadLine();
-                    playerOne.score++;
+                    DeclarePlayerTwoGesture();
+                    GivePlayerOnePoint();
                 }
                 else if (playerTwo.usedGesture == "paper" || playerTwo.usedGesture == "lizard")
                 {
                     DeclarePlayerTwoGesture();
                     GivePlayerTwoPoint();
                 }
-            }
-                
+            }            
         }
         
         public void DeclarePlayerTwoGesture()
