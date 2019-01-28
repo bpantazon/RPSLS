@@ -23,9 +23,15 @@ namespace RPSLS
      
         }
         //member methods
-        
-       
 
+
+        public void PlayGame()
+        {
+            DisplayRules();
+            GetPlayers();
+            PlayRound();
+            AskToRestartGame();
+        }
         public void AskForPlayerOne()
         {
             Console.WriteLine("What is the first player's name?");
@@ -120,7 +126,7 @@ namespace RPSLS
                 playerTwo.usedGesture = null;
                 playerTwo.name = null;
                 playerTwo.score = 0;
-                //need to make a playGame();
+                PlayGame();
             }
 
         }
