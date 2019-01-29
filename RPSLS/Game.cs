@@ -41,7 +41,7 @@ namespace RPSLS
         public void CheckPlayerOneName()
         {
            
-            //why is String.Empty a different color
+            
             if (playerOneName == string.Empty)
             {
                 Console.WriteLine("Player needs a name");
@@ -114,7 +114,12 @@ namespace RPSLS
         {
             string restartGame;
             Console.WriteLine("Would you like to play another game? Type 'yes' if you do.");
-            restartGame = Console.ReadLine();            
+            
+                restartGame = Console.ReadLine();
+            
+                Console.WriteLine("Write 'yes' or 'no'");
+                AskToRestartGame();
+            
             if (restartGame == "yes")
             {
                 playerOne.usedGesture = null;
@@ -127,7 +132,7 @@ namespace RPSLS
             }
 
         }
-        public void CheckPlayerScore() //does Player reset if instantiated again? 
+        public void CheckPlayerScore()
         {
             if (playerOne.score == 2)
             {

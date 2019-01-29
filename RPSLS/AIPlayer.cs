@@ -11,8 +11,7 @@ namespace RPSLS
         public AI(string name, int score)
         {
             this.name = name;
-            this.score = score;
-            
+            this.score = score;            
         }
 
         public override void MakeGesture()

@@ -13,9 +13,6 @@ namespace RPSLS
            
 
             Game game = new Game();
-            //game.DisplayRules();
-            //game.GetPlayers();
-            //game.PlayRound();
             game.PlayGame();
           
             

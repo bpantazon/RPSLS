@@ -11,9 +11,7 @@ namespace RPSLS
         public Human(string name, int score)
         {
             this.name = name;
-            this.score = score;
-            
-            
+            this.score = score;           
         }
 
         public override void MakeGesture()
@@ -21,7 +19,7 @@ namespace RPSLS
             int i;
             Console.WriteLine("Which gesture would " + name + " like to use for this turn? Type '0' for Rock, '1' for Paper, '2' for Scissors, '3' for Lizard, and '4' for Spock");
 
-            //doesn't catch for out of range index
+            
             try
             {
                 i = Convert.ToInt32(Console.ReadLine());
