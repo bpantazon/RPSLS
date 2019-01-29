@@ -42,7 +42,7 @@ namespace RPSLS
         {
            
             //why is String.Empty a different color
-            if (playerOneName == String.Empty)
+            if (playerOneName == string.Empty)
             {
                 Console.WriteLine("Player needs a name");
                 Console.ReadLine();
@@ -59,7 +59,7 @@ namespace RPSLS
         public void CheckPlayerTwoName()
         {
             
-            if (playerTwoName == String.Empty)
+            if (playerTwoName == string.Empty)
             {
                 Console.WriteLine("Player needs a name");
                 Console.ReadLine();
@@ -114,9 +114,7 @@ namespace RPSLS
         {
             string restartGame;
             Console.WriteLine("Would you like to play another game? Type 'yes' if you do.");
-            restartGame = Console.ReadLine();
-            
-            
+            restartGame = Console.ReadLine();            
             if (restartGame == "yes")
             {
                 playerOne.usedGesture = null;
